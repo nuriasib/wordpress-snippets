@@ -1,141 +1,124 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Snippets</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Wordpress Snippets</title>
 <style>
-:root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --muted: #8b949e;
-  --blue: #58a6ff;
-}
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-.wrap {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h1 {
-  margin-bottom: 10px;
-}
-
-.topbar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input, select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #0d1117;
-  color: var(--text);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px;
-}
-
-.card-title {
-  color: var(--blue);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.tag {
-  font-size: 11px;
-  margin-left: 6px;
-  color: var(--muted);
-}
-
-iframe {
-  width: 100%;
-  height: 380px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
-}
-
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --blue: #58a6ff;
+    --blue-dark: #1f6feb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 60px 20px;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  p.subtitle {
+    color: var(--text-muted);
+    margin: 6px 0 36px 46px;
+    font-size: 0.95rem;
+  }
+  .grid {
+    display: grid;
+    gap: 14px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    text-decoration: none;
+    display: block;
+  }
+  .card:hover {
+    border-color: var(--blue);
+    transform: translateY(-1px);
+  }
+  .card-title {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 1.02rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(88, 166, 255, 0.12);
+    color: var(--blue);
+    border: 1px solid rgba(88, 166, 255, 0.35);
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+  .card-desc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-top: 6px;
+  }
+  footer {
+    margin-top: 48px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
 </style>
 </head>
-
 <body>
-
 <div class="wrap">
 
-  <h1>Snippets UI</h1>
+  <header>
+    <div class="logo"></div>
+    <h1>Wordpress Snippets</h1>
+  </header>
+  <p class="subtitle">Índice de snippets — click para previsualizar cada uno</p>
 
-  <div class="topbar">
-    <input type="text" id="search" placeholder="Buscar...">
-    <select id="filter">
-      <option value="all">Todos</option>
-      <option value="form">Formularios</option>
-      <option value="ui">UI</option>
-    </select>
-  </div>
+  <div class="grid">
 
-  <div class="grid" id="grid">
+    <a class="card" href="formulario-legal-multipaso.html">
+      <div class="card-title">Formulario legal multipaso <span class="tag">HTML</span></div>
+      <div class="card-desc">Formulario con pasos, validación y tarjetas de selección de área legal</div>
+    </a>
 
-    <!-- SNIPPET -->
-    <div class="card" data-name="formulario legal multipaso" data-tag="form">
-      <div class="card-title">
-        Formulario legal multipaso <span class="tag">form</span>
-      </div>
-      <iframe src="formulario-legal-multipaso.html"></iframe>
-    </div>
-
-    <!-- DUPLICA ESTE BLOQUE PARA MÁS SNIPPETS -->
+    <!-- Copia este bloque <a class="card">...</a> por cada snippet nuevo que subas -->
 
   </div>
+
+  <footer>Repositorio personal · nuriasib</footer>
 
 </div>
-
-<script>
-const search = document.getElementById("search");
-const filter = document.getElementById("filter");
-const cards = document.querySelectorAll(".card");
-
-function update() {
-  const text = search.value.toLowerCase();
-  const tag = filter.value;
-
-  cards.forEach(card => {
-    const name = card.dataset.name;
-    const ctag = card.dataset.tag;
-
-    const matchText = name.includes(text);
-    const matchTag = tag === "all" || tag === ctag;
-
-    card.style.display = (matchText && matchTag) ? "block" : "none";
-  });
-}
-
-search.addEventListener("input", update);
-filter.addEventListener("change", update);
-</script>
-
 </body>
 </html>
