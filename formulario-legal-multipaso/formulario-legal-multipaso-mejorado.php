@@ -34,7 +34,7 @@ function legal_form_log_abuse($reason, $ip) {
     if ($count >= 5 && !get_transient('legal_form_abuse_alert_sent')) {
         set_transient('legal_form_abuse_alert_sent', 1, HOUR_IN_SECONDS);
         wp_mail(
-            'nuria.gonzalez@sib.es',
+            'MAIL@MAIL.COM',
             'Aviso: posible abuso en formulario de contacto',
             "Se han bloqueado {$count} intentos de envío sospechosos en los últimos 10 minutos.\n" .
             "Último motivo: {$reason}\nÚltima IP: {$ip}\n\n" .
@@ -128,8 +128,8 @@ function send_legal_form() {
     }
 
     $to = [
-        'nuria.gonzalez@sib.es',
-        'nuria.sib.es@gmail.com',
+        'MAIL@MAIL.COM',
+        'MAIL@MAIL.COM',
     ];
     $subject = 'Nueva consulta jurídica desde la web';
 
